@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Sponsor/Adoption of Animal</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <h1 class="text-center">Transaction history</h1>
+          <hr/>
+          <br/>
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sendModal">Send Ether</button>
+      <button type="button" class="btn btn-primary btn-send" data-target="#sendModal">Test Transaction</button>
+      <!-- <button type="button" class="btn btn-primary btn-send" data-toggle="modal" data-target="#sendModal">Send Ether</button> -->
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Tx Hash</th>
+            <th scope="col">From</th>
+            <th scope="col">To</th>
+            <th scope="col">Value</th>
+          </tr>
+        </thead>
+        <tbody id="transactionsRow">
+          <tr id="transactionsTemplate" style="display: none;">
+            <th class="tx-hash">1</th>
+            <td class="tx-from">Mark</td>
+            <td class="tx-to">Otto</td>
+            <td class="tx-value">0 ETH</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="modal" id="sendModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Send Ether</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="inputAddress">Send address</label>
+              <input type="text" class="form-control" id="sendAddress" placeholder="Enter address">
+            </div>
+            
+            <div class="form-group">
+                <div class="input-group">
+                  <label for="inputAddress">Amount</label>
+                  <input type="text" class="form-control" aria-label="...">
+                  <span class="input-group-addon">
+                    <select class="form-select" aria-label="Default transaction unit">
+                      <option selected>Wei</option>
+                      <option value="1">Gwei</option>
+                      <option value="2">Finney</option>
+                      <option value="3">Ether</option>
+                    </select>
+                  </span><!-- /btn-group -->
+                </div><!-- /input-group -->
+            </div><!-- /.row -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary btn-send-modal" data-id="0" data-dismiss="modal">Send Ether</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
